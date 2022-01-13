@@ -47,7 +47,7 @@ services:
     environment:
       - DB_PASSWORD=postgres
     volumes:
-      - .:/rentalcars
+      - .:/{"Pasta do Projeto"}
       - gems:/gems
     depends_on:
       - db
