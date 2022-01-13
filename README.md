@@ -137,7 +137,7 @@ Criar todas as estruturas
 $ docker-compose run --rm app bundle exec rails g scaffold Product id:Integer nome:string preco_custo:double --force
 ```
 
-# gerando um novo aplicativo em rails sem ruby instalado
+## Gerando um novo aplicativo em rails sem ruby instalado ##
 ```sh
 $ docker run -i -t -rm -v ${PWD}:/usr/src/app ruby:2.6 bash
 $ cd /usr/src/app
