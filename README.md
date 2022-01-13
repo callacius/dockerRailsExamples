@@ -137,11 +137,32 @@ Criar todas as estruturas
 $ docker-compose run --rm app bundle exec rails g scaffold Product id:Integer nome:string preco_custo:double --force
 ```
 
-# Comandos Rails docker
+# gerando um novo aplicativo em rails sem ruby instalado
+```sh
+$ docker run -i -t -rm -v ${PWD}:/usr/src/app ruby:2.6 bash
+$ cd /usr/src/app
+$ gem install rails
+$ rails new myapp --skip-test --skip-bundle
+$ exit
+```
 
+# Comandos docker
+
+Lista de containers em execução
+```sh
+$ docker ps
+```
+Lista de todos os containers
+```sh
+$ docker ps -a
+```
 Parar todos os containers
 ```sh
 $ docker stop $(docker ps -a -q)
+```
+Excluir um container específico
+```sh
+$ docker rm {'Preencher com Id do container'}
 ```
 Excluir todos os containers
 ```sh
