@@ -176,3 +176,31 @@ Excluir todos os volumes
 ```sh
 $ docker volume prune
 ```
+
+# Exemplos de conexao com Postgresql
+
+```sh
+default: &default
+adapter: postgresql
+encoding: unicode
+pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+host: db
+user: postgres
+password: <%= ENV['DB_PASSWORD'] %>
+​
+​
+development:
+<<: *default
+database: onebit_exchange_development
+​
+​
+test:
+<<: *default
+database: onebit_exchange_test
+
+​
+production:
+<<: *default
+database: onebit_exchange_production
+username: onebit_exchange
+```
